@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viblumy</title>
+  <link rel="icon" href="images/viblumy_icon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="./images/viblumy_icon.png" alt="Logo">
+    <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+    <nav class="nav" id="nav">
+      <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-circle"></i></button>
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="v_creaViblumy.html">Crea tu Viblumy</a></li>
+        <li><a href="v_disponib.html">Disponible ahora</a></li>
+        <li><a href="v_contact.html">Contacto/Pedidos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="marquesina">
+    <p>📦 Diseña y pide · Envío a todo México 📦</p>
+  </div>
+
+  <main class="personalizador-wrapper">
+    <!-- COLUMNA IZQUIERDA: LIENZO Y PREVISUALIZACIÓN -->
+    <section class="lienzo-seccion">
+      <h3 class="titulo-lienzo">Crea tu accesorio</h3>
+      <div class="lienzo-contenedor">
+        <!-- Foto de la base seleccionada -->
+        <img id="pulsera-actual" src="images/pulsera.png" alt="Base Llavero" class="img-base">
+      </div>
+    </section>
+
+    <!-- TICKET FLOTANTE / LATERAL (INICIALIZADO VACÍO) -->
+    <aside class="ticket-sección">
+      <div class="ticket-flotante">
+        <div class="ticket-contenido">
+          <h3>Tu pedido</h3>
+
+          <div id="lista-pedido"></div>
+
+          <div class="ticket-total">
+            <strong>Total: <span id="precio-total">$0 MXN</span></strong>
+          </div>
+
+          <button id="btn-whatsapp" class="btn-finalizar">
+            Finalizar pedido por WhatsApp
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- COLUMNA DERECHA: PANEL DE OPCIONES -->
+    <section class="panel-seccion">
+
+      <!-- 1. SELECCIONAR BASE DE LLAVERO -->
+      <div class="bloque-opcion">
+        <h3 class="subtitulo-seccion">Paso 1: Elige tu argolla</h3>
+        <div class="pulsera-grid">
+          <!-- Llavero Base 1 -->
+          <div class="tarjeta-pulsera" data-nombre="Llavero Clásico" data-estilo="clasica" data-img="images/pulsera.png"
+            data-tipo="llavero">
+            <img src="images/pulsera.png" alt="Llavero Clásico">
+            <p class="nombre">Llavero Clásico</p>
+            <p class="precio">$100 MXN</p>
+          </div>
+          <!-- Llavero Base 2 -->
+          <div class="tarjeta-pulsera" data-nombre="Llavero Rectangular" data-estilo="rectangular"
+            data-img="images/pulsera2.png" data-tipo="llavero">
+            <img src="images/pulsera2.png" alt="Llavero Rectangular">
+            <p class="nombre">Llavero Rectangular</p>
+            <p class="precio">$90 MXN</p>
+          </div>
+        </div>
+      </div> <!-- Fin Paso 1 -->
+
+      <!-- 2. SELECCIONAR CHARMS o ELEMENTOS DECORATIVOS -->
+      <div class="bloque-opcion">
+        <h3 class="subtitulo-seccion">Paso 2: Selecciona tus charms o elementos decorativos</h3>
+
+        <div class="filtros-contenedor">
+          <!-- Pestañas Principales (Categorías) -->
+          <div class="pestañas-categorias">
+            <button class="btn-cat activa" data-cat="todos">Todos</button>
+            <button class="btn-cat" data-cat="iniciales">Iniciales</button>
+            <button class="btn-cat" data-cat="gustos">Gustos e Intereses</button>
+            <button class="btn-cat" data-cat="sueños">Sueños y Aspiraciones</button>
+            <button class="btn-cat" data-cat="creencias">Creencias</button>
+            <button class="btn-cat" data-cat="favoritos">Favoritos</button>
+            <button class="btn-cat" data-cat="estilo">Estilo</button>
+            <button class="btn-cat" data-cat="especial">Especial</button>
+          </div>
+
+          <!-- Cuadrícula de charms -->
+          <div class="charm-grid" id="catalogo-charms">
+            <!-- Dijes Iniciales -->
+            <div class="tarjeta-charm" data-id="charm-A" data-nombre="Charm letra A" data-cat="iniciales"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="letra A">
+              <p class="nombre">Charm letra A</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-C" data-nombre="Charm letra C" data-cat="iniciales"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="letra C">
+              <p class="nombre">Charm letra C</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-D" data-nombre="Charm letra D" data-cat="iniciales"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="letra D">
+              <p class="nombre">Charm letra D</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-E" data-nombre="Charm letra E" data-cat="iniciales"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="letra E">
+              <p class="nombre">Charm letra E</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-J" data-nombre="Charm letra J" data-cat="iniciales"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="letra J">
+              <p class="nombre">Charm letra J</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-L" data-nombre="Charm letra L" data-cat="iniciales"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="letra L">
+              <p class="nombre">Charm letra L</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-M" data-nombre="Charm letra M" data-cat="iniciales"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="letra M">
+              <p class="nombre">Charm letra M</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-S" data-nombre="Charm letra S" data-cat="iniciales"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="letra S">
+              <p class="nombre">Charm letra A</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+
+            <!-- Dijes Gustos e Intereses-->
+            <div class="tarjeta-charm" data-id="charm-Música" data-nombre="Charm Música" data-cat="gustos"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Música">
+              <p class="nombre">Charm Música</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Cámara" data-nombre="Charm Cámara" data-cat="gustos"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Cámara">
+              <p class="nombre">Charm Cámara</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-DeporteVoli" data-nombre="Charm Voleibol" data-cat="gustos"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Voleibol">
+              <p class="nombre">Charm Voleibol</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-DeporteFut" data-nombre="Charm Fútbol" data-cat="gustos"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Fútbol">
+              <p class="nombre">Charm Fútbol</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Avión" data-nombre="Charm Avión" data-cat="gustos"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Avión">
+              <p class="nombre">Charm Avión</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+
+            <!-- Dijes Sueños y Aspiraciones -->
+            <div class="tarjeta-charm" data-id="charm-Estrella5" data-nombre="Charm Estrella5" data-cat="sueños"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Estrella5">
+              <p class="nombre">Charm Estrella 5</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Estrella4" data-nombre="Charm Estrella4" data-cat="sueños"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Estrella4">
+              <p class="nombre">Charm Estrella 4</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Luna" data-nombre="Charm Luna" data-cat="sueños"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Luna">
+              <p class="nombre">Charm Luna</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Avión" data-nombre="Charm Avión" data-cat="sueños"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Avión">
+              <p class="nombre">Charm Avión</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+
+
+            <!-- Dijes Creencias -->
+            <div class="tarjeta-charm" data-id="charm-Ala" data-nombre="Charm Ala" data-cat="creencias"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Ala">
+              <p class="nombre">Charm Ala</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Trébol" data-nombre="Charm Trébol" data-cat="creencias"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Trébol">
+              <p class="nombre">Charm Trébol</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Cruz" data-nombre="Charm Cruz" data-cat="creencias"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Cruz">
+              <p class="nombre">Charm Cruz</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+
+            <!-- Dijes Favoritos -->
+            <div class="tarjeta-charm" data-id="charm-Gato" data-nombre="Charm Gato" data-cat="favoritos"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Gato">
+              <p class="nombre">Charm Gato</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Perro" data-nombre="Charm Perro" data-cat="favoritos"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Perro">
+              <p class="nombre">Charm Perro</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Perro" data-nombre="Charm Perro" data-cat="favoritos"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Perro">
+              <p class="nombre">Charm Perro</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Herradura" data-nombre="Charm Herradura" data-cat="favoritos"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Herradura">
+              <p class="nombre">Charm Herradura</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Mariposa" data-nombre="Charm Mariposa" data-cat="favoritos"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Mariposa">
+              <p class="nombre">Charm Mariposa</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Flor" data-nombre="Charm Flor" data-cat="favoritos"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Flor">
+              <p class="nombre">Charm Flor</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Café" data-nombre="Charm Café" data-cat="favoritos"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Café">
+              <p class="nombre">Charm Café</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Copa" data-nombre="Charm Copa" data-cat="favoritos"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Copa">
+              <p class="nombre">Charm Copa</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+
+            <!-- Dijes Estilo -->
+            <div class="tarjeta-charm" data-id="charm-Moño" data-nombre="Charm Moño" data-cat="estilo"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Moño">
+              <p class="nombre">Charm Moño</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Flor" data-nombre="Charm Flor" data-cat="estilo"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Flor">
+              <p class="nombre">Charm Flor</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Corazón" data-nombre="Charm Corazón" data-cat="estilo"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Corazón">
+              <p class="nombre">Charm Corazón</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Sol" data-nombre="Charm Sol" data-cat="estilo"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Sol">
+              <p class="nombre">Charm Sol</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Rayo" data-nombre="Charm Rayo" data-cat="estilo"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Rayo">
+              <p class="nombre">Charm Rayo</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+            <div class="tarjeta-charm" data-id="charm-Trébol" data-nombre="Charm Trébol" data-cat="estilo"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Trébol">
+              <p class="nombre">Charm Trébol</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+
+            <!-- Dijes Especial -->
+            <div class="tarjeta-charm" data-id="charm-Abalorio" data-nombre="Charm Abalorio" data-cat="estilo"
+              data-img="images/dijes.jpeg">
+              <img src="images/dijes.jpeg" alt="Abalorio">
+              <p class="nombre">Charm Abalorio</p>
+              <p class="precio">$40 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+
+          </div> <!-- Fin catalogo-charms -->
+        </div> <!-- Fin filtros-contenedor -->
+      </div> <!-- Fin Paso 2 -->
+
+    </section> <!-- Fin panel-seccion -->
+
+  </main>
+
+  <script src="script.js"></script>
+
+  <div style="height: 120px;"></div>
+  <div style="height: 20vh; min-height: 140px;"></div>
+</body>
+
+</html>
