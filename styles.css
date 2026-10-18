@@ -316,7 +316,79 @@ header {
   font-size: bold;
 }
 
+.titulo-portafolio {
+  text-align: center;
+  position: relative;
+  flex-direction: column;
+  padding: 60px 20px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-family: 'Mango';
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #45484d;
+  padding: 1rem;
+  gap: 1.5rem;
+}
 
+.portafolio-inicio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.imagen-portafolio {
+  margin-top: -10px;
+  margin-bottom: 50px;
+  background-color: #fff9ee;
+  border: 1px solid #9a4832;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.portafolio-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/*.btn-comprar {
+  display: block;
+  background-color: #9a4832;
+  color: #fff9ee;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-filtro-da {
+  display: inline-flex;
+  background-color: transparent;
+  color: #45484d;
+  border: 2px solid #45484d;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-filtro-da:hover,
+.btn-filtro-da.activa {
+  border-color: #9a4832;
+}*/
 
 /* CREA TU VIBLUMY - INICIO */
 .catalogo-crear {
@@ -589,21 +661,33 @@ header {
 }
 
 .faq-item summary {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Averia', sans-serif;
   font-weight: bold;
   color: #45484d;
   font-size: 0.9rem;
   outline: none;
 }
 
-.faq-item p {
-  margin-top: 0.6rem;
+.faq-item p{
+  margin-top: 0.2rem;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size: 0.8rem;
   color: #45484d;
   line-height: 1.4;
 }
+
+.faq-item strong {
+  font-weight: 800;
+}
+
+.faq-item li {
+  margin-top: 0.4rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
 
 /* ESTRUCTURA PRINCIPAL DEL PERSONALIZADOR (2 COLUMNAS) */
 .personalizador-wrapper {
