@@ -1,6 +1,6 @@
 /*Elementos determinados 
 Color Terracota: #9a4832
-Color Beige: #fff9ee
+Color Beige: #ddc3ae
 Color Grafito: #45484d
 */
 
@@ -98,7 +98,7 @@ header {
   padding: 0.5rem;
 
   /* 1. CAMBIO CLAVE: Cambiado a RGBA para darle 70% de opacidad (0.7) */
-  background-color: rgba(255, 249, 238, 0.7);
+  background-color: rgba(243, 225, 210, 0.7);
 
   position: fixed;
   top: 0;
@@ -107,8 +107,8 @@ header {
   width: 100%;
   z-index: 1000;
 
-  backdrop-filter: blur(2.5px);
-  -webkit-backdrop-filter: blur(2.5px);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
 }
 
 .logo {
@@ -209,7 +209,7 @@ header {
 }
 
 .boton-crear {
-  background-color: #fff9ee;
+  background-color: #ddc3ae;
   border: 2px solid #9a4832;
   border-radius: 15px;
   cursor: pointer;
@@ -343,7 +343,7 @@ header {
 .imagen-portafolio {
   margin-top: -10px;
   margin-bottom: 50px;
-  background-color: #fff9ee;
+  background-color: #ddc3ae;
   border: 1px solid #9a4832;
   border-radius: 12px;
   overflow: hidden;
@@ -361,7 +361,7 @@ header {
 /*.btn-comprar {
   display: block;
   background-color: #9a4832;
-  color: #fff9ee;
+  color: #ddc3ae;
   padding: 0.5rem;
   border-radius: 8px;
   font-family: 'Raleway', sans-serif;
@@ -438,7 +438,7 @@ header {
   justify-content: center;
   min-width: 380px;
   height: 100px;
-  background-color: #fff9ee;
+  background-color: #ddc3ae;
   border: 2px solid #9a4832;
   border-radius: 15px;
   cursor: pointer;
@@ -498,7 +498,7 @@ header {
 }
 
 .tarjeta-producto {
-  background-color: #fff9ee;
+  background-color: #ddc3ae;
   border: 1px solid #9a4832;
   border-radius: 12px;
   overflow: hidden;
@@ -535,7 +535,7 @@ header {
 .btn-comprar {
   display: block;
   background-color: #9a4832;
-  color: #fff9ee;
+  color: #ddc3ae;
   padding: 0.5rem;
   border-radius: 8px;
   font-family: 'Raleway', sans-serif;
@@ -651,7 +651,7 @@ header {
 }
 
 .faq-item {
-  background-color: #fff9ee;
+  background-color: #ddc3ae;
   border: 1px solid #9a4832;
   border-radius: 8px;
   margin-bottom: 0.8rem;
@@ -751,7 +751,7 @@ header {
   text-align: center;
   align-items: center;
   justify-content: center;
-  background-color: #fff9ee;
+  background-color: #ddc3ae;
   color: #45484d;
   font-family: 'Raleway', sans-serif;
   font-size: 17px;
@@ -1075,7 +1075,7 @@ header {
     height: 100vh;
     height: 100dvh;
 
-    background-color: #fff9ee;
+    background-color: #ddc3ae;
     padding: 2rem;
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
     z-index: 20000;
