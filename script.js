@@ -362,7 +362,8 @@ if (btnWhatsapp) {
     const totalTexto = spanTotal ? spanTotal.textContent : '$0 MXN';
 
     mensaje += `\n💰 *Total estimado:* ${totalTexto}\n\n`;
-    mensaje += `¿Me podrías confirmar disponibilidad y los datos para el pago, por favor? 💖`;
+    mensaje += `📦 *+ Envío* (se cotiza según tu código postal)\n\n`;
+    mensaje += `¿Me confirmas disponibilidad, el costo de envío (o el total con envío incluido) y los datos para el pago? 💖`;
 
     // F. Convertir el texto a formato URL y abrir WhatsApp
     const urlWhatsapp = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
@@ -394,7 +395,8 @@ botonesComprarDirecto.forEach(boton => {
     let mensaje = `✨ *¡Hola Viblumy! Me interesa un producto de Disponible Ahora:* ✨\n\n`;
     mensaje += `🛍️ *Producto:* ${nombreProducto}\n`;
     mensaje += `💰 *Precio:* $${precioProducto} MXN\n\n`;
-    mensaje += `¿Aún lo tienes disponible para envío/entrega inmediata? 💖`;
+    mensaje += `📦 *+ Envío* (se cotiza según tu código postal)\n\n`;
+mensaje += `¿Está disponible para envío? ¿Cuánto tarda en llegar a mi domicilio y me compartes los datos para el pago? 💖`;
 
     // Abrir WhatsApp con el número oficial
     const urlWhatsapp = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
