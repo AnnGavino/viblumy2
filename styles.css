@@ -803,6 +803,8 @@ header {
   border-color: #d4af37;
 }
 
+
+
 .tarjeta-pulsera.activa {
   border-color: #9a4832;
   background-color: #fdfaf7;
@@ -813,6 +815,57 @@ header {
   width: 60px;
   height: 60px;
   object-fit: contain;
+}
+
+/* Contenedor de imagen para centrar la cinta diagonal */
+.charm-img-wrap {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.charm-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tarjeta-charm.agotado .charm-img-wrap::after {
+  content: "AGOTADO";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-28deg);
+  background-color: rgba(154, 72, 50, 0.92);
+  color: #fdfaf7;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 2px 18px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.tarjeta-charm.agotado .btn-cant,
+.tarjeta-charm.agotado .btn-cant:disabled {
+  background-color: #e8ddd5;
+  border-color: #c7b5a8;
+  color: #8c827b;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+}
+
+.tarjeta-charm.agotado .btn-cant:hover {
+  background-color: #e8ddd5;
+  color: #8c827b;
 }
 
 .nombre {
